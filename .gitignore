@@ -1,0 +1,44 @@
+# C++ build artifacts
+build/
+cmake-build-debug/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+*.pdb
+*.ilk
+*.idb
+*.log
+
+# Node.js / npm
+node_modules/
+pnpm-lock.yaml
+yarn-error.log*
+npm-debug.log*
+package-lock.json
+
+# React / Vite
+dist/
+.vite/
+coverage/
+*.local
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor directories
+.vscode/
+.idea/
+*.swp
+*~
