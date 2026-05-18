@@ -1,0 +1,20 @@
+# railway.toml — Node.js backend on Railway
+[build]
+builder = "nixpacks"
+buildCommand = "npm install && npm run build:addon || echo 'Addon build skipped — using mock engine'"
+
+[deploy]
+startCommand = "npm start"
+healthcheckPath = "/api/health"
+healthcheckTimeout = 30
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3
+
+[[services]]
+name = "algo-backend"
+
+[services.variables]
+PORT              = "3001"
+NODE_ENV          = "production"
+ENGINE_THREADS    = "8"
+FRONTEND_URL      = "https://your-app.vercel.app"

@@ -1,0 +1,27 @@
+{
+  "name": "algo-dashboard-backend",
+  "version": "1.0.0",
+  "description": "Node.js bridge between C++ analytics engine and React dashboard",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "build:addon": "npx node-gyp configure build",
+    "rebuild": "npx node-gyp rebuild",
+    "test": "node -e \"const M=require('./src/mockEngine');const e=new M(4);e.addSymbol('BTCUSD');e.onSnapshot(s=>console.log(JSON.parse(s).price));e.start();setTimeout(()=>e.stop(),2000);\""
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "node-addon-api": "^7.0.0",
+    "socket.io": "^4.6.1",
+    "ws": "^8.14.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "node-gyp": "^10.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
