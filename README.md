@@ -171,7 +171,11 @@ make -j$(nproc)
 Edit `cpp-engine/include/strategy.h` → `StrategyEngine::evaluate()`:
 
 ```cpp
-
+// Example: Volume spike
+if (snap.volume_24h > avg_volume * 2.0) {
+    signals.push_back(make_signal(snap, SignalType::ALERT, 0.55,
+        "Volume spike detected"));
+}
 ```
 
 ## Adding a New Indicator
